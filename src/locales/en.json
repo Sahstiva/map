@@ -1,0 +1,42 @@
+{
+  "header": {
+    "about": "About",
+    "title": "SquareGPS assessment",
+    "map": "Map"
+  },
+  "map": {
+    "marker": "Marker #",
+    "location": "My location",
+    "delete": "Delete all",
+    "addMode": "Add marker Mode. Select the point on the map",
+    "deleteError": "Error deleting marker",
+    "deleteAllError": "Error deleting all markers",
+    "adding": "Adding new marker to the map",
+    "addressNotFound": "Address Not Found",
+    "detectingLocation": "Detecting location",
+    "geoPositionError": "Error getting geo position",
+    "geoBrowserError": "Your browser doesn't support Geolocation",
+    "geoIPError": "Error detecting geo position by ip address"
+  },
+  "about": {
+    "title": "About the Task",
+    "intro": "Using Vue.js, Vuex, VueRouter, and Vuetify, create an application. The header must contain a menu with two items: About the Task and Map. The main content should display the respective sections.",
+    "sectionTitleAbout": "About the Task Section",
+    "sectionContentAbout": "This section should contain the task description, formatted similarly.",
+    "sectionTitleMap": "Map Section",
+    "sectionContentMap": "The screen should display a map and a list (see example):",
+    "list": {
+      "item1": "When clicking the add button, the map should enter marker addition mode: a marker should appear at the click location, and the list should contain an entry with the point's address.",
+      "item1Details": {
+        "a": "You can use any free geocoding API, for example: ",
+        "b": "If the address is not found, show an error and do not add the marker to the list."
+      },
+      "item2": "Clicking on a marker should highlight the corresponding list entry.",
+      "item3": "Clicking on a list entry should center the map on the marker.",
+      "item4": "Markers must be stored locally and not disappear after a page reload.",
+      "item5": "The selected marker's ID should be displayed in the address bar."
+    },
+    "storageNote": "Local data storage must be implemented as a service emulating a backend. (A Backend class is required, which pseudo-asynchronously saves data to localStorage.)",
+    "exampleTitle": "Example"
+  }
+}
