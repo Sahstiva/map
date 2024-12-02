@@ -1,7 +1,6 @@
 
 ---
 
-```markdown
 # Vue.js 2 Application
 
 This is a Vue.js 2 application that includes features like API integration, routing, and state management. The project uses Vuetify for UI components, Vuex for state management, and environment variables for secure configuration.
