@@ -1,7 +1,8 @@
-
+const API_KEY=process.env.VUE_APP_API_KEY;
 export async function geocode(latlng) {
+    console.log('API KEY', API_KEY);
     const response = await fetch(
-        `https://geocode.maps.co/reverse?lat=${latlng.lat}&lon=${latlng.lng}&api_key=6749e422efd01245801126znv9fbcce`
+        `https://geocode.maps.co/reverse?lat=${latlng.lat}&lon=${latlng.lng}&api_key=${API_KEY}`
     );
     const data = await response.json();
     if (data && data.display_name) {

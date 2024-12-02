@@ -212,13 +212,10 @@ export default {
     position: relative;
   }
   &-add {
-    position: absolute;
+    position: absolute !important;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-  }
-  &-pointer {
-    cursor: pointer !important;
   }
 }
 </style>
