@@ -1,7 +1,12 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col cols="4">
+      <!-- Marker List -->
+      <v-col
+          :cols="$vuetify.breakpoint.smAndDown ? 12 : 4"
+          order="2"
+          order-md="1"
+      >
         <v-list>
           <v-list-item
               v-for="(marker, index) in markers"
@@ -11,9 +16,16 @@
               @click="onListItemClick(marker)"
           >
             <v-list-item-content>
-              <v-list-item-title><v-icon v-if="isSelected(marker.id)">mdi-arrow-right</v-icon> {{ $t("map.marker") }} {{ index + 1 }}</v-list-item-title>
-              <v-list-item-subtitle>{{ marker.latlng.lat.toFixed(4) }}, {{ marker.latlng.lng.toFixed(4) }}</v-list-item-subtitle>
-              <v-list-item-subtitle>{{ marker.address }}</v-list-item-subtitle>
+              <v-list-item-title>
+                <v-icon v-if="isSelected(marker.id)">mdi-arrow-right</v-icon>
+                {{ $t("map.marker") }} {{ index + 1 }}
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{ marker.latlng.lat.toFixed(4) }}, {{ marker.latlng.lng.toFixed(4) }}
+              </v-list-item-subtitle>
+              <v-list-item-subtitle>
+                {{ marker.address }}
+              </v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-icon>
               <v-btn
@@ -28,7 +40,12 @@
           </v-list-item>
         </v-list>
       </v-col>
-      <v-col cols="8">
+      <!-- Map -->
+      <v-col
+          :cols="$vuetify.breakpoint.smAndDown ? 12 : 8"
+          order="1"
+          order-md="2"
+      >
         <div class="map-wrapper">
           <l-map
               :zoom="zoom"
@@ -44,18 +61,33 @@
                 @click="onMarkerClick(marker)"
             ></l-marker>
           </l-map>
-          <v-btn class="map-add" fab dark color="indigo" @click="enableAdding" :disabled="isAdding">
-            <v-icon dark>
-              mdi-plus
-            </v-icon>
+          <v-btn
+              class="map-add"
+              fab
+              dark
+              color="indigo"
+              @click="enableAdding"
+              :disabled="isAdding"
+          >
+            <v-icon dark>mdi-plus</v-icon>
           </v-btn>
         </div>
-        <v-btn color="blue" class="mt-5 ml-5" @click="getCurrentLocation">{{ $t("map.location") }}</v-btn>
-        <v-btn color="red" class="mt-5 ml-5" :disabled="!isMarkers" @click="deleteAllMarkers">{{ $t("map.delete") }}</v-btn>
+        <v-btn color="blue" class="mt-5 ml-5" @click="getCurrentLocation">
+          {{ $t("map.location") }}
+        </v-btn>
+        <v-btn
+            color="red"
+            class="mt-5 ml-5"
+            :disabled="!isMarkers"
+            @click="deleteAllMarkers"
+        >
+          {{ $t("map.delete") }}
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
 </template>
+
 
 <script>
 import {LMap, LMarker, LTileLayer} from 'vue2-leaflet';
